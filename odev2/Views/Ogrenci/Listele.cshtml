@@ -1,0 +1,102 @@
+﻿@model IEnumerable<odev2.Models.OgrenciBil>
+
+@{
+    ViewData["Title"] = "Listele";
+}
+
+<h1>@ViewData["Baslik"]</h1>
+
+<p>
+    @*<a asp-action="Musteri/YeniKayit">Yeni Kayit</a>*@
+    @Html.ActionLink("Yeni Kayit", "YeniKayit", "Musteri")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinif)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DersTanimi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kredi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SinavTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Final)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ortalama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HarfKarsiligi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GecmeDurumu)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinif)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DersTanimi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kredi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SinavTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Final)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ortalama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HarfKarsiligi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GecmeDurumu)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
